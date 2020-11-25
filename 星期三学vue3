@@ -1,0 +1,12 @@
+<!--总不能不努力就放弃吧-->
+Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进DOM的系统：
+<div id ='app'>
+  {{message}}//这里的message相当于一个动态变量 当被数据改变时 DOM由数据驱动改变值 （M-V-VM）
+</div>
+js: 
+var app = new Vue({  //延伸：var let const 区别
+  el:'#app',
+  data:{
+    message:'星期三了呀'
+  }
+})
