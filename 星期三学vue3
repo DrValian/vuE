@@ -1,12 +1,55 @@
 <!--总不能不努力就放弃吧-->
-Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进DOM的系统：
+Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进DOM的系统：//link:DOM是什么
 <div id ='app'>
   {{message}}//这里的message相当于一个动态变量 当被数据改变时 DOM由数据驱动改变值 （M-V-VM）
 </div>
 js: 
-var app = new Vue({  //延伸：var let const 区别
+var app = new Vue({  //link：var let const 区别（还不会弄超链接--||）
   el:'#app',
   data:{
     message:'星期三了呀'
   }
 })
+---------------------
+<span v-bind:title='message'>     //绑定 将这个元素节点的 title attribute 和 Vue 实例的 message property 保持一致
+ 23333
+</span>
+---------------------
+<p v-if="seen">现在你看到我了</p>  //改变seen的值控制p的显隐 link:v-if和v-show的区别
+//这个例子演示了我们不仅可以把数据绑定到 DOM 文本或 attribute，还可以绑定到 DOM 结构
+---------------------
+<div id="app">
+  <ol>                            //link:html对象 ol li
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+---------------------
+<div id="app-5">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">反转消息</button>  //v-on事件监听器
+</div>
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('') //link:split()
+    }
+  }
+})
+---------------------
+<div id="app-6">
+  <p>{{ message }}</p>
+  <input v-model="message">       //重点 双向绑定 当改变input值 dom attribute随之改变 当vue property改变 inputInnertext随之改变
+</div>
+var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+--------------------
