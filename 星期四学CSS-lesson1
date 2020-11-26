@@ -1,0 +1,46 @@
+什么是盒子模型（面经常问）
+  所有HTML元素可以看作盒子，在CSS中，"box model"这一术语是用来设计和布局时使用。
+CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。
+盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。
+（内联样式）Inline style > （内部样式）Internal style sheet >（外部样式）External style sheet > 浏览器默认样式
+------module1------
+https://www.runoob.com/w3cnote/css-style-priority.html
+css 7 种选择器：
+ID选择器，   如 #id{}
+类选择器，   如 .class{}
+属性选择器，  如 a[href="segmentfault.com"]{}
+伪类选择器，  如 :hover{}
+伪元素选择器，如 ::before{}
+标签选择器，  如 span{}
+通配选择器，  如 *{}
+内联样式 > id 选择器 > 类选择器 = 伪类选择器 = 属性选择器 > 标签选择器 = 伪元素选择器
+<div class="content-class" id="content-id"></div>
+#content-id {
+    color: red;
+}
+.content-class {
+    color: blue;
+}
+div {
+    color: grey;
+}
+------module2------
+
+body
+{
+background-image:url('gradient2.png');
+background-repeat:repeat-x;//背景图像 - 水平或垂直平铺
+background-repeat:no-repeat;//如果你不想让图像平铺，你可以使用 background-repeat 属性:
+background-position:right top;
+}
+背景- 简写属性
+body {background:#ffffff url('img_tree.png') no-repeat right top;}
+当使用简写属性，属性值的顺序为'：'时:
+background-color	
+background-image 
+background-repeat      设置背景图像是否及如何重复。
+background-attachment  背景图像是否固定或者随着页面的其余部分滚动。
+background-position    设置背景图像的起始位置。
+以上属性无需全部使用，你可以按照页面的实际需要使用.
+
+
